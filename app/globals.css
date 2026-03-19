@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7f1e8;
+  --foreground: #16110f;
+  --card: rgba(255, 251, 245, 0.82);
+  --card-strong: rgba(255, 249, 241, 0.96);
+  --border: rgba(22, 17, 15, 0.08);
+  --muted: rgba(22, 17, 15, 0.62);
+  --success: #60735f;
+  --warning: #b45d45;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at top left, rgba(214, 180, 140, 0.55), transparent 30%),
+    radial-gradient(circle at top right, rgba(96, 115, 95, 0.18), transparent 26%),
+    linear-gradient(180deg, #fcf8f2 0%, #f7f1e8 42%, #efe4d3 100%);
+  font-family: var(--font-body), monospace;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(22, 17, 15, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 17, 15, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(circle at center, black, transparent 88%);
+  opacity: 0.45;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.04em;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(96, 115, 95, 0.2);
+}
+
+.card-surface {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 45px rgba(39, 28, 23, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.card-strong {
+  background: var(--card-strong);
+}
+
+.task-ring {
+  box-shadow:
+    0 0 0 1px rgba(22, 17, 15, 0.06),
+    0 10px 30px rgba(39, 28, 23, 0.07);
+}
+
+.heat-0 {
+  background: rgba(22, 17, 15, 0.06);
+}
+
+.heat-1 {
+  background: rgba(180, 93, 69, 0.35);
+}
+
+.heat-2 {
+  background: rgba(180, 93, 69, 0.62);
+}
+
+.heat-3 {
+  background: rgba(96, 115, 95, 0.92);
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: rgba(22, 17, 15, 0.18);
+  border-radius: 999px;
+}
+
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
