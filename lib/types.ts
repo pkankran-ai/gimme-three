@@ -22,6 +22,19 @@ export type AppData = {
   lastOpenedDate: string | null;
 };
 
+export type AppSettings = {
+  celebrationsEnabled: boolean;
+  darkMode: boolean;
+  showMotivationalCopy: boolean;
+};
+
+export type AppExport = {
+  version: number;
+  exportedAt: string;
+  data: AppData;
+  settings: AppSettings;
+};
+
 export type AppStats = {
   currentStreak: number;
   bestStreak: number;
@@ -39,4 +52,9 @@ export type HeatmapDay = {
   date: string;
   completed: number;
   isToday: boolean;
+};
+
+export type ArchiveGroup = {
+  label: string;
+  days: DayEntry[];
 };
